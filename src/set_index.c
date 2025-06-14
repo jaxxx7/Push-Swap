@@ -1,39 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   set_index.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 14:40:01 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/11 15:45:33 by mhachem          ###   ########.fr       */
+/*   Created: 2025/06/11 15:45:45 by mhachem           #+#    #+#             */
+/*   Updated: 2025/06/11 16:44:08 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_stack_size(t_stack *lst)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int		split;
+	int	i;
 
-	if (argc < 2)
+	i = 0;
+	if (lst == NULL)
 		return (0);
-	if (argc == 2 && ft_strlen(argv[1]) > 1)
+	while (lst)
 	{
-		argv = ft_split(argv[1], ' ');
-		split = 1;
+		i++;
+		lst = lst->next;
 	}
-	check_input(argc, argv);
-	stack_b = NULL;
-	stack_a = init_stack(argv, split);
-	/* while (stack_a)
+	return (i);
+}
+
+int	sort_array(int *array)
+{
+	
+}
+
+t_stack	set_index(t_stack *stack_a, t_stack *stack_b)
+{
+	int	*array;
+	int	i;
+
+	array = malloc(sizeof(int) * ft_stack_size(stack_a));
+	i = 0;
+	while (stack_a)
 	{
-		printf("%i \n", stack_a->value);
+		array[i] = stack_a->value;
+		// printf("%i \n", array[i]);
 		stack_a = stack_a->next;
-	} */
-	set_index(stack_a, stack_b);
-	if (split)
-		ft_free(argv);
+		i++;
+	}
+	sort_array(array);
 }

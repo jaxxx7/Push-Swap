@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:53:15 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/03 12:31:23 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/06/11 13:25:04 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,4 @@ char	**ft_split(char const *s, char c)
 	new[i] = NULL;
 	return (new);
 }
+

@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:17:15 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/10 12:18:43 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/06/11 12:56:54 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	append_node(t_stack **stack, t_stack *new)
 	if (!*stack)
 	{
 		*stack = new;
-		return;
+		return ;
 	}
 	tmp = *stack;
 	while (tmp->next)
@@ -40,17 +40,26 @@ void	append_node(t_stack **stack, t_stack *new)
 	tmp->next = new;
 }
 
-t_stack	*init_stack(char **argv)
+t_stack	*init_stack(char **argv, int split)
 {
 	int		i;
 	int		value;
 	t_stack	*stack;
+	t_stack	*new_node;
 
 	stack = NULL;
-	i = 0;
+	if (split)
+		i = 0;
+	else
+		i = 1;
 	while (argv[i])
 	{
 		value = ft_atoi(argv[i]);
-		append_node(&stack, stack_new(value));
+		new_node = stack_new(value);
+		if (!new_node)
+			return (NULL);
+		append_node(&stack, new_node);
+		i++;
 	}
+	return (stack);
 }

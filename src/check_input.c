@@ -6,13 +6,13 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:54:06 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/10 12:46:22 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/06/10 16:10:28 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_digit(int argc, char **argv)
+int	check_digit(char **argv)
 {
 	int	i;
 	int	j;
@@ -34,7 +34,7 @@ int	check_digit(int argc, char **argv)
 	return (0);
 }
 
-int	check_double(int argc, char **argv)
+int	check_double(char **argv)
 {
 	int	i;
 	int	j;
@@ -54,7 +54,7 @@ int	check_double(int argc, char **argv)
 	return (0);
 }
 
-int	check_int(int argc, char **argv)
+int	check_int(char **argv)
 {
 	int		i;
 	long	c;
@@ -78,16 +78,16 @@ void	check_input(int argc, char **argv)
 	if (argc == 2)
 	{
 		array = ft_split(argv[1], ' ');
-		len = count_args(argv);
+		len = count_args(array);
 	}
 	else
 	{
 		array = argv + 1;
 		len = argc;
 	}
-	if (check_digit(len, array)
-		|| check_double(len, array)
-		|| check_int(len, array))
+	if (check_digit(array)
+		|| check_double(array)
+		|| check_int(array))
 	{
 		if (argc == 2)
 			ft_free(array);
