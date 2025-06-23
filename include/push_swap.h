@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:40:04 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/11 16:18:31 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/06/20 17:30:34 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,34 @@ void	check_input(int argc, char **argv);
 int		check_int(char **argv);
 int		check_double(char **argv);
 int		check_digit(char **argv);
-// prout.c
+// utils.c
 int		print_error(void);
 int		count_args(char **args);
+int		ft_stack_size(t_stack *lst);
 // init_stack.c
 t_stack	*init_stack(char **argv, int split);
 // set_index.c
-t_stack	set_index(t_stack *stack_a, t_stack *stack_b);
-
+int		partition(int *array, int start, int end);
+void	quick_sort(int *array, int start, int end);
+t_stack	*set_index(t_stack *stack_a);
+// operations
+void	swap(t_stack **stack);
+void	push(t_stack **from, t_stack **push);
+void	rotate(t_stack **stack);
+void	reverse_rotate(t_stack **stack);
+// wrappers
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+// sort_stack.c
+int		max_bits(t_stack **stack_a);
+void	radix_sort(t_stack **a, t_stack **b);
 #endif

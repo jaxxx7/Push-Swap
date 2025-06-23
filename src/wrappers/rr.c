@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prout.c                                            :+:      :+:    :+:   */
+/*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 13:09:53 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/03 13:10:39 by mhachem          ###   ########.fr       */
+/*   Created: 2025/06/18 16:52:55 by mhachem           #+#    #+#             */
+/*   Updated: 2025/06/18 16:56:46 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	print_error(void)
+void	rr(t_stack **a, t_stack **b)
 {
-	write(2, "Error\n", 6);
-	exit(EXIT_SUCCESS);
-}
-
-int	count_args(char **args)
-{
-	int	i;
-
-	i = 0;
-	while (args[i])
-		i++;
-	return (i);
+	rotate(a);
+	rotate(b);
+	write(1, "rr\n", 3);
 }
