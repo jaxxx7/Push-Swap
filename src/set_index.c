@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 15:45:45 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/20 17:00:05 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/03 13:12:40 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ t_stack	*set_index(t_stack *stack_a)
 	int		*array;
 	int		i;
 
+	array = NULL;
 	array = fill_array(array, stack_a);
 	while (stack_a)
 	{

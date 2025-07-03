@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:18:47 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/20 17:42:32 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/06/28 15:17:35 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 void	push(t_stack **to, t_stack **from)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!from || !*from)
-		return;
+		return ;
 	tmp = *from;
 	*from = tmp->next;
 	tmp->next = *to;
 	*to = tmp;
 }
 
-void swap(t_stack **stack)
+void	swap(t_stack **stack)
 {
-	t_stack *first;
-	t_stack *second;
+	t_stack	*first;
+	t_stack	*second;
 
 	if (!*stack || !(*stack)->next)
-		return;
+		return ;
 	first = *stack;
 	second = first->next;
 	first->next = second->next;
@@ -38,13 +38,13 @@ void swap(t_stack **stack)
 	*stack = second;
 }
 
-void rotate(t_stack **stack)
+void	rotate(t_stack **stack)
 {
-	t_stack *first;
-	t_stack *last;
+	t_stack	*first;
+	t_stack	*last;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	first = *stack;
 	*stack = first->next;
 	first->next = NULL;
@@ -54,13 +54,13 @@ void rotate(t_stack **stack)
 	last->next = first;
 }
 
-void reverse_rotate(t_stack **stack)
+void	reverse_rotate(t_stack **stack)
 {
-	t_stack *prev;
-	t_stack *last;
+	t_stack	*prev;
+	t_stack	*last;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	prev = NULL;
 	last = *stack;
 	while (last->next)

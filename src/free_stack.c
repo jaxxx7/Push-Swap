@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 15:25:44 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/28 15:23:34 by mhachem          ###   ########.fr       */
+/*   Created: 2025/07/03 13:26:36 by mhachem           #+#    #+#             */
+/*   Updated: 2025/07/03 14:44:54 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_strcmp(char *s1, char *s2)
+void	free_stack(t_stack *stack)
 {
-	int	i;
+	t_stack	*tmp;
 
-	i = 0;
-	while (s1[i] || s2[i])
+	while (stack)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
+		tmp = stack->next;
+		free(stack);
+		stack = tmp;
 	}
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:09:53 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/20 17:00:09 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/03 16:09:10 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	count_args(char **args)
 		i++;
 	return (i);
 }
+
 int	ft_stack_size(t_stack *lst)
 {
 	int	i;
@@ -39,5 +40,15 @@ int	ft_stack_size(t_stack *lst)
 		i++;
 		lst = lst->next;
 	}
+	return (i);
+}
+
+int	ft_array_size(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array && array[i])
+		i++;
 	return (i);
 }

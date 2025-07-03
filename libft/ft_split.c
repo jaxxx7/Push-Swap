@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:53:15 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/14 15:41:46 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/03 15:53:29 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ static int	ft_get_rows(char const *s, char c)
 {
 	int	rows;
 	int	i;
-
+	if (!s)
+		return (0);
 	rows = 0;
 	i = 0;
 	while (s[i])
@@ -37,6 +38,8 @@ char	**ft_free(char **s)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (s[i])
 	{
 		free(s[i]);
@@ -56,6 +59,8 @@ char	**ft_split(char const *s, char c)
 	if (!new)
 		return (NULL);
 	i = 0;
+	if (!s)
+		return (0);
 	while (*s)
 	{
 		if (*s != c)

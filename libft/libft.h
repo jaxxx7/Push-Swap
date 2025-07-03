@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:24:10 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/11 16:33:58 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/03 13:08:12 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <limits.h>
-# include "push_swap.h"
 
 typedef struct s_list
 {

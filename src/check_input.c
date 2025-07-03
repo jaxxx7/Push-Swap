@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:54:06 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/10 16:10:28 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/03 16:06:13 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	check_digit(char **argv)
 	int	j;
 
 	i = 0;
+	if (!argv)
+		return (0);
 	while (argv[i])
 	{
 		j = 0;
@@ -40,6 +42,8 @@ int	check_double(char **argv)
 	int	j;
 
 	i = 0;
+	if (!argv)
+		return (0);
 	while (argv[i])
 	{
 		j = i + 1;
@@ -60,6 +64,8 @@ int	check_int(char **argv)
 	long	c;
 
 	i = 0;
+	if (!argv)
+		return (0);
 	while (argv[i])
 	{
 		c = ft_atoi(argv[i]);
@@ -72,28 +78,29 @@ int	check_int(char **argv)
 
 void	check_input(int argc, char **argv)
 {
-	int		len;
 	char	**array;
+	int		split;
 
+	split = 0;
 	if (argc == 2)
 	{
 		array = ft_split(argv[1], ' ');
-		len = count_args(array);
+		if (!array)
+			print_error();
+		split = 1;
 	}
 	else
-	{
 		array = argv + 1;
-		len = argc;
-	}
 	if (check_digit(array)
 		|| check_double(array)
 		|| check_int(array))
 	{
-		if (argc == 2)
+		if (split)
 			ft_free(array);
 		print_error();
 	}
 }
+
 /*
 int	main(int argc, char **argv)
 {

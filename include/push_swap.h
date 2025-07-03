@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:40:04 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/20 17:30:34 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/03 15:56:24 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		check_digit(char **argv);
 int		print_error(void);
 int		count_args(char **args);
 int		ft_stack_size(t_stack *lst);
+int	ft_array_size(char **array);
 // init_stack.c
 t_stack	*init_stack(char **argv, int split);
 // set_index.c
@@ -58,6 +59,10 @@ void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 // sort_stack.c
+t_stack	*find_highest(t_stack *a);
+void	tiny_sort(t_stack **a);
 int		max_bits(t_stack **stack_a);
 void	radix_sort(t_stack **a, t_stack **b);
+// free_stack.c
+void	free_stack(t_stack *stack);
 #endif
