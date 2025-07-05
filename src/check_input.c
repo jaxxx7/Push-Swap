@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:54:06 by mhachem           #+#    #+#             */
-/*   Updated: 2025/07/03 16:06:13 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/03 17:24:50 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,29 +76,15 @@ int	check_int(char **argv)
 	return (0);
 }
 
-void	check_input(int argc, char **argv)
+void	check_input(char **argv)
 {
 	char	**array;
-	int		split;
 
-	split = 0;
-	if (argc == 2)
-	{
-		array = ft_split(argv[1], ' ');
-		if (!array)
-			print_error();
-		split = 1;
-	}
-	else
-		array = argv + 1;
+	array = argv + 1;
 	if (check_digit(array)
 		|| check_double(array)
 		|| check_int(array))
-	{
-		if (split)
-			ft_free(array);
 		print_error();
-	}
 }
 
 /*

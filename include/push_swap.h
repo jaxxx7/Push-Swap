@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:40:04 by mhachem           #+#    #+#             */
-/*   Updated: 2025/07/03 15:56:24 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/05 12:58:26 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }				t_stack;
 // check_input.c
-void	check_input(int argc, char **argv);
+void	check_input(char **argv);
 int		check_int(char **argv);
 int		check_double(char **argv);
 int		check_digit(char **argv);
@@ -34,9 +34,9 @@ int		check_digit(char **argv);
 int		print_error(void);
 int		count_args(char **args);
 int		ft_stack_size(t_stack *lst);
-int	ft_array_size(char **array);
+int		ft_array_size(char **array);
 // init_stack.c
-t_stack	*init_stack(char **argv, int split);
+t_stack	*init_stack(char **argv);
 // set_index.c
 int		partition(int *array, int start, int end);
 void	quick_sort(int *array, int start, int end);
@@ -61,6 +61,7 @@ void	rrr(t_stack **a, t_stack **b);
 // sort_stack.c
 t_stack	*find_highest(t_stack *a);
 void	tiny_sort(t_stack **a);
+void	sort_five(t_stack **a, t_stack **b);
 int		max_bits(t_stack **stack_a);
 void	radix_sort(t_stack **a, t_stack **b);
 // free_stack.c

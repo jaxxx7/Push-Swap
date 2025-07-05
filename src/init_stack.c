@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:17:15 by mhachem           #+#    #+#             */
-/*   Updated: 2025/06/11 12:56:54 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/03 17:22:06 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	append_node(t_stack **stack, t_stack *new)
 	tmp->next = new;
 }
 
-t_stack	*init_stack(char **argv, int split)
+t_stack	*init_stack(char **argv)
 {
 	int		i;
 	int		value;
@@ -48,10 +48,7 @@ t_stack	*init_stack(char **argv, int split)
 	t_stack	*new_node;
 
 	stack = NULL;
-	if (split)
-		i = 0;
-	else
-		i = 1;
+	i = 1;
 	while (argv[i])
 	{
 		value = ft_atoi(argv[i]);

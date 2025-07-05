@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 16:58:07 by mhachem           #+#    #+#             */
-/*   Updated: 2025/07/03 14:54:17 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/05 15:45:48 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,20 +62,46 @@ void	tiny_sort(t_stack **a)
 		sa(a);
 }
 
+void	sort_five(t_stack **a, t_stack **b)
+{
+	while (ft_stack_size(*a) > 3)
+	{
+		if ((*a)->index == 0 || (*a)->index == 1)
+			pb(a, b);
+		else
+			ra(a);
+	}
+	tiny_sort(a);
+	if ((*b)->index < (*b)->next->index)
+		sb(b);
+	pa(a, b);
+	pa(a, b);
+}
+int	bits_number(t_stack **a)
+{
+	int	bits;
+	int	i;
+
+	i = 0;
+	bits = (*a)->index;
+	while ((bits >> 0) != 0)
+		bits++;
+	return (bits);
+}
+
 void	radix_sort(t_stack **a, t_stack **b)
 {
-	int		max_bit;
-	int		i;
-	int		j;
-	int		stack_size;
+	int	max_bit;
+	int	i;
+	int	j;
+	int	stack_size;
+	int	b_size;
 
-	if (ft_stack_size(*a) == 3)
-		tiny_sort(a);
 	max_bit = max_bits(a);
-	stack_size = ft_stack_size(*a);
 	i = 0;
 	while (i < max_bit)
 	{
+		stack_size = ft_stack_size(*a);
 		j = 0;
 		while (j < stack_size)
 		{
@@ -85,8 +111,16 @@ void	radix_sort(t_stack **a, t_stack **b)
 				ra(a);
 			j++;
 		}
-		while (*b)
-			pa(a, b);
+		b_size = ft_stack_size(*b);
+		j = 0;
+		while (j < b_size)
+		{
+			if ((((*b)->index >> (i + 1)) & 1) == 1)
+				pa(a, b);
+			else
+				rb(b);
+			j++;
+		}
 		i++;
 	}
 }
