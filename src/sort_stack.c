@@ -6,17 +6,17 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 16:58:07 by mhachem           #+#    #+#             */
-/*   Updated: 2025/07/05 15:45:48 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/05 15:50:45 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	max_bits(t_stack **stack_a)
+int max_bits(t_stack **stack_a)
 {
-	int		max_elem;
-	t_stack	*element;
-	int		max_bits;
+	int max_elem;
+	t_stack *element;
+	int max_bits;
 
 	element = *stack_a;
 	max_elem = element->index;
@@ -35,9 +35,9 @@ int	max_bits(t_stack **stack_a)
 	return (max_bits);
 }
 
-t_stack	*find_highest(t_stack *a)
+t_stack *find_highest(t_stack *a)
 {
-	t_stack	*highest;
+	t_stack *highest;
 
 	highest = a;
 	while (a)
@@ -49,9 +49,9 @@ t_stack	*find_highest(t_stack *a)
 	return (highest);
 }
 
-void	tiny_sort(t_stack **a)
+void tiny_sort(t_stack **a)
 {
-	t_stack	*highest_node;
+	t_stack *highest_node;
 
 	highest_node = find_highest(*a);
 	if (*a == highest_node)
@@ -62,7 +62,7 @@ void	tiny_sort(t_stack **a)
 		sa(a);
 }
 
-void	sort_five(t_stack **a, t_stack **b)
+void sort_five(t_stack **a, t_stack **b)
 {
 	while (ft_stack_size(*a) > 3)
 	{
@@ -77,12 +77,10 @@ void	sort_five(t_stack **a, t_stack **b)
 	pa(a, b);
 	pa(a, b);
 }
-int	bits_number(t_stack **a)
+int bits_number(t_stack **a)
 {
-	int	bits;
-	int	i;
+	int bits;
 
-	i = 0;
 	bits = (*a)->index;
 	while ((bits >> 0) != 0)
 		bits++;
@@ -124,3 +122,4 @@ void	radix_sort(t_stack **a, t_stack **b)
 		i++;
 	}
 }
+
