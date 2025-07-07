@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:40:01 by mhachem           #+#    #+#             */
-/*   Updated: 2025/07/05 15:44:23 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/07 15:52:42 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ int	main(int argc, char **argv)
 		sort_five(&stack_a, &stack_b);
 	else
 		radix_sort(&stack_a, &stack_b);
-	t_stack *tmp = stack_a;
+	/*t_stack *tmp = stack_a;
 	while (tmp)
 	{
 		printf("value = %d, index = %d\n", tmp->value, tmp->index);
 		tmp = tmp->next;
-	}
+	} */
 	free_stack(stack_a);
-	free_stack(stack_b); 
+	free_stack(stack_b);
 }

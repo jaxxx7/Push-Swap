@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:09:53 by mhachem           #+#    #+#             */
-/*   Updated: 2025/07/03 16:09:10 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/07/07 15:01:30 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,16 @@ int	ft_array_size(char **array)
 	while (array && array[i])
 		i++;
 	return (i);
+}
+
+int	bits_number(t_stack **a)
+{
+	int	bits;
+	int	value;
+
+	bits = 0;
+	value = (*a)->index;
+	while (value >> bits)
+		bits++;
+	return (bits);
 }
