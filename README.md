@@ -1,0 +1,1 @@
+An algorithmic sorting project in C that uses two stacks (a and b) and a limited set of operations (sa, sb, pa, pb, ra, rra, etc.) to sort data with the smallest possible number of moves. Includes optimized sorting strategies for small and large datasets.
