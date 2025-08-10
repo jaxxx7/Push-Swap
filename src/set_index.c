@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 15:45:45 by mhachem           #+#    #+#             */
-/*   Updated: 2025/07/03 13:12:40 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/08/10 13:32:12 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int	*fill_array(int *array, t_stack *stack_a)
 
 	i = 0;
 	array = malloc(sizeof(int) * ft_stack_size(stack_a));
+	if (!array)
+		return (0);
 	while (stack_a)
 	{
 		array[i] = stack_a->value;
@@ -82,6 +84,7 @@ t_stack	*set_index(t_stack *stack_a)
 		stack_a->index = i;
 		stack_a = stack_a->next;
 	}
+	free(array);
 	return (stack_a);
 }
 

@@ -3,7 +3,7 @@ NAME = push_swap
 
 # Compilateur et flags
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iinclude -no-pie
+CFLAGS = -Wall -Wextra -Werror -Iinclude -no-pie -g
 
 SRC_DIR = src
 WRAP_DIR = src/wrappers
