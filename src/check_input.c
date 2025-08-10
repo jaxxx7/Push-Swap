@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:54:06 by mhachem           #+#    #+#             */
-/*   Updated: 2025/07/03 17:24:50 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/08/09 17:48:47 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ void	check_input(char **argv)
 	if (check_digit(array)
 		|| check_double(array)
 		|| check_int(array))
+		print_error();
+	else if (array[0][0] == '-' || array[0][0] == '+')
 		print_error();
 }
 

@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:40:01 by mhachem           #+#    #+#             */
-/*   Updated: 2025/08/09 15:28:33 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/08/09 17:16:30 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	stack_a = init_stack(argv);
 	set_index(stack_a);
-	if (ft_stack_size(stack_a) == 3)
-		tiny_sort(&stack_a);
-	else if (ft_stack_size(stack_a) == 5)
-		sort_five(&stack_a, &stack_b);
-	else
-		radix_sort(&stack_a, &stack_b);
+	radix_sort(&stack_a, &stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 }
