@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:54:06 by mhachem           #+#    #+#             */
-/*   Updated: 2025/08/09 17:48:47 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/08/24 13:25:56 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ int	check_digit(char **argv)
 	{
 		j = 0;
 		if (argv[i][j] == '-' || argv[i][j] == '+')
+		{
+			if (!argv[i][j + 1])
+				return (1);
 			j++;
+		}
 		while (argv[i][j])
 		{
 			if (!ft_isdigit(argv[i][j]))
@@ -84,8 +88,6 @@ void	check_input(char **argv)
 	if (check_digit(array)
 		|| check_double(array)
 		|| check_int(array))
-		print_error();
-	else if (array[0][0] == '-' || array[0][0] == '+')
 		print_error();
 }
 

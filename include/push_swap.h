@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:40:04 by mhachem           #+#    #+#             */
-/*   Updated: 2025/08/09 14:58:20 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/08/18 11:22:24 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ int		bits_number(t_stack **a);
 t_stack	*find_highest(t_stack *a);
 void	tiny_sort(t_stack **a);
 void	sort_five(t_stack **a, t_stack **b);
+int		find_min(t_stack *stack);
+void	sort_four(t_stack **a, t_stack **b);
 int		max_bits(t_stack **stack_a);
+void	sort_two(t_stack **a);
 // init_stack.c
 t_stack	*init_stack(char **argv);
 // set_index.c
@@ -68,4 +71,6 @@ void	rrr(t_stack **a, t_stack **b);
 void	radix_sort(t_stack **a, t_stack **b);
 // free_stack.c
 void	free_stack(t_stack *stack);
+// deja_sort.c
+int		deja_sort(t_stack *stack_a);
 #endif

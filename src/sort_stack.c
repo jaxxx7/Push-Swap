@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 16:58:07 by mhachem           #+#    #+#             */
-/*   Updated: 2025/08/09 17:30:26 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/08/18 11:23:14 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,12 @@ void	radix_sort(t_stack **a, t_stack **b)
 
 	max_bit = max_bits(a);
 	i = 0;
-	if (ft_stack_size(*a) == 3)
+	if (ft_stack_size(*a) == 2)
+		sort_two(a);
+	else if (ft_stack_size(*a) == 3)
 		tiny_sort(a);
+	else if (ft_stack_size(*a) == 4)
+		sort_four(a, b);
 	else if (ft_stack_size(*a) == 5)
 		sort_five(a, b);
 	else

@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   deja_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 14:40:01 by mhachem           #+#    #+#             */
-/*   Updated: 2025/08/18 11:16:08 by mhachem          ###   ########.fr       */
+/*   Created: 2025/08/16 15:23:59 by mhachem           #+#    #+#             */
+/*   Updated: 2025/08/16 15:30:00 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	deja_sort(t_stack *stack_a)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	if (argc == 1)
-		return (0);
-	check_input(argv);
-	stack_b = NULL;
-	stack_a = init_stack(argv);
-	set_index(stack_a);
-	if (deja_sort(stack_a))
+	while (stack_a && stack_a->next)
 	{
-		free_stack(stack_a);
-		return (0);
+		if (stack_a->value > stack_a->next->value)
+			return (0);
+		stack_a = stack_a->next;
 	}
-	radix_sort(&stack_a, &stack_b);
-	free_stack(stack_a);
-	free_stack(stack_b);
+	return (1);
 }

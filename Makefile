@@ -16,6 +16,8 @@ SRC =	$(SRC_DIR)/check_input.c \
 		$(SRC_DIR)/utils.c \
 		$(SRC_DIR)/free_stack.c \
 		$(SRC_DIR)/mini_sort.c \
+		$(SRC_DIR)/mini_sort2.c \
+		$(SRC_DIR)/deja_sort.c \
 		$(WRAP_DIR)/pa.c \
 		$(WRAP_DIR)/pb.c \
 		$(WRAP_DIR)/ra.c \
