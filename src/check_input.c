@@ -6,7 +6,7 @@
 /*   By: mhachem <mhachem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:54:06 by mhachem           #+#    #+#             */
-/*   Updated: 2025/08/24 13:25:56 by mhachem          ###   ########.fr       */
+/*   Updated: 2025/08/30 12:31:17 by mhachem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,20 @@ int	check_double(char **argv)
 {
 	int	i;
 	int	j;
+	int	val_i;
+	int	val_j;
 
 	i = 0;
 	if (!argv)
 		return (0);
 	while (argv[i])
 	{
+		val_i = ft_atoi(argv[i]);
 		j = i + 1;
 		while (argv[j])
 		{
-			if (ft_strcmp(argv[i], argv[j]) == 0)
+			val_j = ft_atoi(argv[j]);
+			if (val_i == val_j)
 				return (1);
 			j++;
 		}
